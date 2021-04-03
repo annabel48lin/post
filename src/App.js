@@ -3,11 +3,13 @@ import './App.css';
 import React from "react";
 import firebase from "firebase";
 import {VictoryChart, VictoryLine} from 'victory';
+import NavBar from "./NavBar"
 
 export default function App(){
     const firebaseApp = firebase.apps[0];
     return(
         <div>
+            <NavBar />
           <VictoryChart>
               <VictoryLine style={{
                   data: { stroke: "#c43a31" },
