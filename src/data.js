@@ -1,7 +1,7 @@
 var admin = require("firebase-admin");
 
 // Fetch the service account key JSON file contents
-var serviceAccount = require("post-visualize-development-firebase-adminsdk-u9ze6-9475ef2e0c.json");
+var serviceAccount = require("./post-visualize-development-firebase-adminsdk-u9ze6-9475ef2e0c.json");
 
 // Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
@@ -14,8 +14,8 @@ var db = admin.database();
 
 // var plant = localStorage.getItem("plantName")
 
-var ref = db.ref(plant);
+var ref = db.ref("Moroceli");
 
-// ref.once("value", function(snapshot) {
-//   console.log(snapshot.val());
-// });
+ref.once("value", function(snapshot) {
+  console.log(snapshot.val());
+});

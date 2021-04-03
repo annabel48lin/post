@@ -10,7 +10,7 @@
 
 # production
 /build
-/post-visualize-development-firebase-adminsdk-u9ze6-9475ef2e0c.json
+/src/post-visualize-development-firebase-adminsdk-u9ze6-9475ef2e0c.json
 # misc
 .DS_Store
 .env.local
