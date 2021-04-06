@@ -9,7 +9,7 @@ export default function App(){
     const firebaseApp = firebase.apps[0];
     return(
         <div>
-            <NavBar />
+          <NavBar />
           <VictoryChart>
               <VictoryLine style={{
                   data: { stroke: "#c43a31" },

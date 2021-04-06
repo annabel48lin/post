@@ -16,6 +16,24 @@ var db = admin.database();
 
 var ref = db.ref("Moroceli");
 
+console.log(db)
+
 ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
+
+export function listofPlants(db) {
+  var output = [];
+  var x;
+  for (x in db) {
+    output.push(x);
+  }
+  return output;
+}
+
+class Reference {
+  constructor(data = db) {
+    this.db = db;
+    this.plantNames = []];
+  }
+}
