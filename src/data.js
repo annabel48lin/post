@@ -22,7 +22,7 @@ ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
 
-export function listofPlants(db) {
+export function listOfPlants(db) {
   var output = [];
   var x;
   for (x in db) {
@@ -34,6 +34,10 @@ export function listofPlants(db) {
 class Reference {
   constructor(data = db) {
     this.db = db;
-    this.plantNames = []];
+    this.plantNames = listOfPlants(db);
+  }
+
+  getPlantNames() {
+    return this.plantNames;
   }
 }
