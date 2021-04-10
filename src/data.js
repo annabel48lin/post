@@ -16,7 +16,7 @@ var db = admin.database();
 
 var ref = db.ref("Moroceli");
 
-console.log(db)
+console.log(db);
 
 ref.once("value", function(snapshot) {
   console.log(snapshot.val());
@@ -34,6 +34,6 @@ export function listofPlants(db) {
 class Reference {
   constructor(data = db) {
     this.db = db;
-    this.plantNames = []];
+    this.plantNames = [];
   }
 }
