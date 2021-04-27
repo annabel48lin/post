@@ -1,3 +1,7 @@
+
+// Hardcoded list of plants, should be dynamically generated from firebase in the future
+const plants = ["Agalteca", "Alauca", "Atima", "Cuatro Comunidades", "Otoro", "Marcala", "Moroceli", "Matias", "San Nicolas", "Tamara", "Las Vegas", "San Juan Guarita", "Zamorano", "Gracias"]
+
 var admin = require("firebase-admin");
 
 // Fetch the service account key JSON file contents
@@ -22,18 +26,44 @@ ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
 
-export function listofPlants(db) {
-  var output = [];
-  var x;
-  for (x in db) {
-    output.push(x);
-  }
-  return output;
+export function listOfPlants(db) {
+  // var output = [];
+  // var x;
+  // for (x in db.DataSnapshot) {
+
+  //   output.push(x);
+  // }
+  // return output;
+  return plants;
 }
 
+/**
+ * Wrapper class for the Firebase realtime database to allow for easy retrieval of
+ * plant data
+ */
 class Reference {
   constructor(data = db) {
     this.db = db;
-    this.plantNames = [];
+    this.plantNames = listOfPlants(db);
+  }
+
+  /**
+   * Returns the list of plants
+   * 
+   * @returns The list of plants
+   */
+  getPlantNames() {
+    return this.plantNames;
+  }
+
+  /**
+   * Returns the data value that corresponds to the inputted
+   * plant name
+   * 
+   * @param {*} plantName    The plant that data is requested for
+   * @returns The reference to the data
+   */
+  getData(plantName) {
+    return this.db.ref(plantName);
   }
 }
