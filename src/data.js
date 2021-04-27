@@ -20,7 +20,7 @@ var db = admin.database();
 
 var ref = db.ref("Moroceli");
 
-console.log(db)
+console.log(db);
 
 ref.once("value", function(snapshot) {
   console.log(snapshot.val());
