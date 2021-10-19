@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body{
+  margin: 0px;
+  font-family: sans-serif;
+  width: 90%;
+  margin: 0 auto;
+  font-weight: 400;
+  background:rgb(225, 236, 240); 
+
+}
+
+main{
+  padding: 20px 10px;
+}
+
+/*header and nav bar*/
+.navbar{
+  width: 100%;
+  margin: 0 auto;
+  background:rgb(225, 236, 240);
+  transition: .5s;
+  font-family: 'Rajdhani', sans-serif;
+ 
+  top: 0;
+  left: 0;
+  padding: 10px 100px;
+  position: fixed;
+  box-sizing: border-box;
+
+}
+
+.pagecontent{
+  margin-top: 125px;
+}
+header::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav{
+  float: right;
+}
+
+.nav-logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+nav ul li{
+  display: inline-block;
+  /* margin-left: 70px; */
+  margin: 35px 40px 0px 40px;
+  position: relative;
+  text-align:center;
+}
+
+nav ul li a{
+  color:#070707; 
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  margin: auto;
+  /* margin: 0px 50px; */
+}
+
+nav a:hover{
+  color:rgb(152, 191, 204);
+}
+
+nav a::before{
+  content: '';
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: rgb(152, 191, 204);
+
+  position: absolute;
+  top: 0;
+   width: 0%; 
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+  width: 100%;
+}
+
+/*make dropdown appear on hover. CHANGE TO JS*/
+.navplants:hover + .hidden {
+  display: block;
+}
+
+/*navbar: plants dropdown*/
+.nav-dropdown{
+  position: absolute;
+  /* width: 150px; */
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(225, 236, 240);
+  border: 1px solid #10374e;
+  border-radius: 5px;
+}
+
+.nav-dropdown li{
+  padding: 5px;
+  margin:0px;
+  text-align: left;
+  /*background-color: #eff2f3; */
+  border:none;
+}
+
+.nav-dropdown li a{
+  font-size: 20px;
+}
+
+
+/*cards on home page*/
+.card-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  margin: 10px 30px 30px 30px;
+  border-radius: 5px 5px 0 0;
+}
+.card-main{
+  /* background-image: url(“images/agalteca-map.png”); */
+  background-color: lightblue;
+  padding: 20px 60px;
+  border-radius: 5px 5px 0 0;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.card-bottom{
+  padding: 0px 10px;
+}
+.card-bottom .card-metric{
+  font-family:  sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #4D4A4A;
+}
+.card-main:hover{
+  background-color: rgb(152, 191, 204);
+}
+.card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+}
+
+footer{
+  padding: 10px 40px;
+  background-color: #10374E;
+}
+
+footer .about-us{
+  color: azure;
+}
+
+
+/*subscribe page*/
+.formcontent{
+  margin-top: 125px;
+}
+
+.name, .email, .password, .repeat{
+  padding: 10px;
+  color: #10374E;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+input{ 
+  border: 2px solid #39B54A;
+  padding: 8px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+input.name, input.email, input.password, input.repeat {
+  width: 100%;
+}
+
+input.subscribe{
+  font-size: 22px;
+  background-color: #ccf3d2;
+  padding: 3px;
+  border: 3px solid #39B54A;
+  width: 25%;
+}
+
+/*hidden class: hide/show elements using JS*/
+.hidden{
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  p {
+    font-size: 18px;
+  }
+  
+  /*nav bar*/
+  .header{
+    display:flex;
+    flex-direction: column;
+  }
+  .nav-logo{
+    width:100%;
+  }
+}
